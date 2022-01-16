@@ -1,0 +1,55 @@
+<div class="container mt-5">
+  <div class="row justify-content-between">
+    <h1 class="col-6">All Users</h1>
+    <button class="col-2 btn btn-primary" [routerLink]="['/admin/adduser']">Add</button>
+  </div>
+  <div class="row me-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Age</th>
+          <th>Address</th>
+          <!-- <th>Like</th> -->
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <!-- <td>
+            <img [src]="article.photo" style="width:50px"alt="">
+          </td> -->
+          <td>{{user.firstname}} {{user.lastname}}</td>
+          <td>{{user.age}}</td>
+          <td>{{user.address}}</td>
+          <td class="dropstart">
+            <button class="btn btn-outline-primary dropdown-toggle dropup" data-bs-toggle="dropdown" aria-expanded="false"></button>
+            <ul class="dropdown-menu">
+              <li>
+                <button class="dropdown-item" >See Details</button>
+              </li>
+              <li>
+                <button class="dropdown-item" >Download</button>
+              </li>
+              <!-- <li>
+                <button class="dropdown-item" >Duplicate</button>
+              </li> -->
+              <li>
+                <button class="dropdown-item" [routerLink]="['/admin/userdetails',user._id]">Edit</button>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <button class="dropdown-item " (click)="deleteUser(user._id)">Delete</button>
+              </li>
+            </ul>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>

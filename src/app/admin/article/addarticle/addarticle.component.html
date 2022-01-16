@@ -1,0 +1,27 @@
+<!-- <p>addproduct works!</p> -->
+<div class="container mt-5">
+  <div class="row">
+    <h1>Add new Article</h1>
+  </div>
+  <form action="#">
+    <div class="mb-3">
+      <label for="title">Title</label>
+      <input [(ngModel)]="article.title" class="form-control" type="text" name="title" id="title">
+    </div>
+    <div class="mb-3">
+      <label for="content">Content</label>
+      <input [(ngModel)]="article.content" class="form-control" type="text" name="content" id="content">
+    </div>
+    <div class="mb-3">
+      <label for="like">Like</label>
+      <input [(ngModel)]="article.like" class="form-control" type="text" name="like" id="like">
+    </div>
+    <div class="mb-5">
+      <label for="image">Image</label>
+      <input [(ngModel)]="article.photo" class="form-control" type="text" name="photo" id="photo">
+    </div>
+    <div class="d-grid d-block">
+      <button (click)="add()" type="button" class="btn btn-primary">Add</button>
+    </div>
+  </form>
+</div>

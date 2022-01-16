@@ -1,0 +1,27 @@
+<!-- <p>addproduct works!</p> -->
+<div class="container mt-5">
+  <div class="row">
+    <h1>Add new User</h1>
+  </div>
+  <form action="#">
+    <div class="mb-3">
+      <label for="firstname">First Name</label>
+      <input [(ngModel)]="user.firstname" class="form-control" type="text" name="firstname" id="firstname">
+    </div>
+    <div class="mb-3">
+      <label for="lastname">Last Name</label>
+      <input [(ngModel)]="user.lastname" class="form-control" type="text" name="lastname" id="lastname">
+    </div>
+    <div class="mb-3">
+      <label for="age">Age</label>
+      <input [(ngModel)]="user.age" class="form-control" type="text" name="age" id="age">
+    </div>
+    <div class="mb-5">
+      <label for="address">Address</label>
+      <input [(ngModel)]="user.address" class="form-control" type="text" name="address" id="address">
+    </div>
+    <div class="d-grid d-block">
+      <button (click)="add()" type="button" class="btn btn-primary">Create</button>
+    </div>
+  </form>
+</div>

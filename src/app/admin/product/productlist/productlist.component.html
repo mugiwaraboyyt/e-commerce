@@ -1,0 +1,34 @@
+<!-- <p>productlist works!</p> -->
+<div class="container mt-5">
+  <div class="row justify-content-between">
+    <h1 class="col-6">Product List</h1>
+    <button class="col-2 btn btn-outline-primary" [routerLink]="['/admin/addproduct']">Add</button>
+  </div>
+  <div class="row mt-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>
+            <img [src]="product.image" style="width:50px"alt="">
+          </td>
+          <td>{{product.title}}</td>
+          <td>{{product.description}}</td>
+          <td>{{product.price}}</td>
+          <td class="d-flex gap-2">
+            <button class="btn btn-outline-primary" [routerLink]="['/admin/productdetails',product._id]">Update</button>
+            <button class="btn btn-outline-danger" (click)="deleteProduct(product._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
